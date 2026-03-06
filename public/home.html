@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevBook - Accueil</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  gap: 30px;
+}
+.container {
+  text-align: center;
+  color: white;
+}
+h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+p {
+  font-size: 18px;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+button {
+  padding: 16px 40px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: #667eea;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+button:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>🚀 Bienvenue sur DevBook</h1>
+<p>Prêt à discuter en temps réel?</p>
+<button onclick="window.location.href='chat.html'">💬 Rejoindre le chat</button>
+</div>
+</body>
+</html>
