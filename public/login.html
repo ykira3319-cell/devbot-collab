@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevBook - Connexion</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container {
+  background: rgba(22, 35, 43, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+h2 { color: white; margin-bottom: 30px; font-size: 28px; }
+input {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  border: 2px solid #444;
+  border-radius: 10px;
+  background: #0f1e25;
+  color: white;
+  font-size: 14px;
+  transition: 0.3s;
+}
+input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+}
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.login {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+.register {
+  background: #42b72a;
+  color: white;
+}
+button:hover { transform: translateY(-2px); box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+</style>
+</head>
+<body>
+<div class="container">
+<h2>🔐 DevBook</h2>
+<input type="email" id="email" placeholder="Email">
+<input type="password" id="password" placeholder="Mot de passe">
+<button class="login" onclick="login()">Se connecter</button>
+<button class="register" onclick="window.location.href='register.html'">Créer un compte</button>
+</div>
+
+<script>
+function login() {
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+  let user = JSON.parse(localStorage.getItem("devbook_user"));
+  
+  if (!user) {
+    alert("❌ Aucun compte trouvé");
+    return;
+  }
+  if (email === user.email && password === user.password) {
+    window.location.href = "home.html";
+  } else {
+    alert("❌ Email ou mot de passe incorrect");
+  }
+}
+</script>
+</body>
+  </html>
